@@ -16,7 +16,6 @@ let getPatty = function() {
 let cookPatty = function(patty) {
   // we need time to cook the patty!
   return new Promise(function(success, failure) {
-    failure('Failed to cook patty');
     setTimeout(function() {
       if (patty) {
         success('We\'ve cooked the patty!');
@@ -47,19 +46,19 @@ let orderBurger = function() {
     .then(function(gotBuns) {
       return getPatty()
     })
-    .then(function(cookedPatty) {
-      return cookPatty(cookedPatty);
+    .then(function(patty) {
+      return cookPatty(patty);
     })
-    .then(function(cookedBurger) {
-      serve(cookedBurger);
+    .then(function(cookedPatty) {
+      serve(cookedPatty);
     })
     .catch(function(error) {
       console.log(error);
     })
 }
 
-let serve = function(cookedBurger) {
-  console.log(`Order up! ${cookedBurger}`);
+let serve = function(cookedPatty) {
+  console.log(`Order up! ${cookedPatty}`);
 }
 
 orderBurger();

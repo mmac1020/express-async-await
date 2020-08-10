@@ -10,6 +10,7 @@ const orderBurger = function(nextStep) {
   })
   getPatty(function (patty) {
     cookPatty(patty, function (cookedPatty) {
+      console.log('Got into cookPatty');
       if (gotBuns) {
         putPattyBetweenBuns(buns, cookedPatty, function(burger) {
           nextStep(burger)
