@@ -1,0 +1,16 @@
+{
+  "name": "exp",
+  "version": "1.0.0",
+  "description": "Express demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Ben",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.2"
+  }
+}
