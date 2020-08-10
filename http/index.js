@@ -16,6 +16,6 @@ server.on('request', (req, res) => {
   }
 })
 
-server.listen(3000, function() {
+server.listen(3000, 'localhost', function() {
   console.log('Our server has started!');
 })

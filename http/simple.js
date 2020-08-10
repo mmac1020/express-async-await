@@ -8,6 +8,6 @@ server.on('request', (req, res) => {
   res.end()
 })
 
-server.listen(3000, function() {
+server.listen(3000, 'localhost', function() {
   console.log('Our server has started!');
 })

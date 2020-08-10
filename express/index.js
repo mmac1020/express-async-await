@@ -40,6 +40,6 @@ app.get('/pizza', inject, (req, res, next) =>{
   res.send('<h1>Welcome to the pizza page!</h1>')
 })
 
-app.listen(3000, function() {
+app.listen(3000, 'localhost', function() {
   console.log('app is listening on 3000');
 }) 
