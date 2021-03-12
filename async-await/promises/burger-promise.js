@@ -1,4 +1,4 @@
-let canMakeBurger = false;
+let canMakeBurger = true;
 
 let orderBurger = new Promise(
   function(success, failure) {

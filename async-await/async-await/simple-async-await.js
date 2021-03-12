@@ -41,12 +41,11 @@ let getBuns = function() {
 
 let orderBurger = async function() {
   try {
-    let patty = await getPatty();
-    let buns = await getBuns();
+    let [patty, buns] = await Promise.all([getPatty(), getBuns()]);
+    console.log(`Got ${patty} and ${buns}`);
     let cookedPatty = await cookPatty(patty);
-    serve(cookedPatty);  
+    serve(cookedPatty);
   } catch (error) {
-    console.log('FAILURE');
     console.log(error);
   }
 }
