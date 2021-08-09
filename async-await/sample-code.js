@@ -11,17 +11,22 @@
 // const myPreferredPromise = new Promise(function(success, failure) {
 
 // })
-const havePatties = false;
+const havePatties = true;
 const haveBuns = true;
 
 // Your libraries will write this code
 let orderBurger = new Promise(function (success, failure) {
   if (havePatties) {
     if (haveBuns) {
-      success('I have made you a burger');
+      setTimeout(() => {
+        success('I have made you a burger');
+      }, 2000);
+    } else {
+      failure('I cannot make you a burger');
     }
+  } else {
+    failure('I cannot make you a burger');
   }
-  failure('I cannot make you a burger');
 });
 
 // So you can interact with this code
@@ -40,6 +45,11 @@ const promiseCallingFunction = async function () {
 };
 
 promiseCallingFunction();
+
+for (let i = 0; i < 100; i++) {
+  console.log(i);
+}
+
 // THIS IS A GLARING RED LIGHT FLASHING IN YOUR FACE TELLING
 // YOU THAT THIS THING IS A PROMISE (.THEN!!!!!!!!!!!!!!)
 // orderBurger
