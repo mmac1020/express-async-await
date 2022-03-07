@@ -39,6 +39,18 @@ app.get('/', function(req, res) {
   res.send('Hello World');
 })
 
+app.post('/', (req, res, next) => {
+  res.send('post route');
+});
+
+app.put('/', (req, res, next) => {
+  res.send('put route');
+});
+
+app.delete('/', (req, res, next) => {
+  res.send('delete route');
+});
+
 // How to denote a parameter is to put a colon in front of it
 
 app.get('/users/:id/:name', (req, res) => {
@@ -49,6 +61,7 @@ app.get('/:name', (req, res) => {
   console.log(req.params);
   res.send(`<div>Hello ${req.params.name}</div>`);
 })
+
 
 app.listen(3000, function () {
   console.log('Running on port 3000');
